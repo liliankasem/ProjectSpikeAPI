@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeMeetingRoom", "FreeMeet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeMeetingRoom.Tests", "FreeMeetingRoom.Tests\FreeMeetingRoom.Tests.csproj", "{B63186BC-286C-4E49-BCCF-F7B35E05679A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Exchange.WebServices.Data", "..\..\..\Git\ews-managed-api\Microsoft.Exchange.WebServices.Data.csproj", "{F059972F-0561-4203-ABB8-3ABB41CCBE22}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Exchange.WebServices.Data", "ews-managed-api\Microsoft.Exchange.WebServices.Data.csproj", "{F059972F-0561-4203-ABB8-3ABB41CCBE22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -263,7 +263,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Git\ews-managed-api\Microsoft.Exchange.WebServices.Data.csproj">
+    <ProjectReference Include="..\ews-managed-api\Microsoft.Exchange.WebServices.Data.csproj">
       <Project>{f059972f-0561-4203-abb8-3abb41ccbe22}</Project>
       <Name>Microsoft.Exchange.WebServices.Data</Name>
     </ProjectReference>

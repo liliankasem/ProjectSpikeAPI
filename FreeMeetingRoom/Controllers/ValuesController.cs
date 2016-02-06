@@ -61,7 +61,7 @@ namespace FreeMeetingRoom.Controllers
             // GetRooms(roomGroup)
             Collection<EmailAddress> rooms = service.GetRooms(roomGroup[0]);
 
-            string response = "The room is free";
+            string response = "This room is free";
             //if the room.Address matchaes the one you are looking for then
             foreach (EmailAddress room in rooms)
             {
@@ -85,7 +85,7 @@ namespace FreeMeetingRoom.Controllers
                     // Iterate the appointments
 
                     if (appointments.Items.Count == 0)
-                        response = "The room is free";
+                        response = "This room is free";
                     else
                     {
                         DateTime appt = appointments.Items[0].Start;
@@ -95,7 +95,7 @@ namespace FreeMeetingRoom.Controllers
                         if (test.TotalMinutes < 0)
                             response = "a meeting is booked at this time";
                         else
-                            response = "the room is free for " + t.ToString() + "minutes";
+                            response = "the room is free for " + t.ToString() + " minutes";
                     }
                     Console.WriteLine(response);
                 }
