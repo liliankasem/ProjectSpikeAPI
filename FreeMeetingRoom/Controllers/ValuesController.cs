@@ -85,18 +85,45 @@ namespace FreeMeetingRoom.Controllers
                     // Iterate the appointments
 
                     if (appointments.Items.Count == 0)
-                        response = "This room is free";
+                        response = "The room is free";
                     else
                     {
-                        DateTime appt = appointments.Items[0].Start;
-                        TimeSpan test = DateTime.Now.Subtract(appt);
-                        int t = (int)Math.Round(Convert.ToDecimal(test.TotalMinutes.ToString()));
+                        foreach (Appointment apppointment in appointments.Items)
+                        {
+                            DateTime appt_start = apppointment.Start;
+                            DateTime appt_end = apppointment.End;
+                            if ((DateTime.Now > appt_start) && (DateTime.Now < appt_end))
+                            {
+                                response = "A meeting is booked, but ownership is 9 tenths of the law";
+                                break;
+                            }
+                            if (DateTime.Now > appt_end)
+                                continue;
+                            if (DateTime.Now < appt_start)
+                            {
+                                TimeSpan test = appt_start.Subtract(DateTime.Now);
+                                int t = (int)Math.Round(Convert.ToDecimal(test.TotalMinutes.ToString()));
+                                response = "the room is free for " + t.ToString() + "minutes";
+                                break;
+                            }
 
-                        if (test.TotalMinutes < 0)
-                            response = "a meeting is booked at this time";
-                        else
-                            response = "the room is free for " + t.ToString() + " minutes";
+                        }
                     }
+
+
+                    //if (appointments.Items.Count == 0)
+                    //    response = "This room is free";
+                    //else
+                    //{
+                    //    DateTime appt = appointments.Items[0].Start;
+                    //    TimeSpan test = DateTime.Now.Subtract(appt);
+                    //    int t = (int)Math.Round(Convert.ToDecimal(test.TotalMinutes.ToString()));
+
+                    //    if (test.TotalMinutes < 0)
+                    //        response = "a meeting is booked at this time";
+                    //    else
+                    //        response = "the room is free for " + t.ToString() + " minutes";
+                    //}
                     Console.WriteLine(response);
                 }
             }
